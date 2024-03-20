@@ -44,3 +44,12 @@ const initOverlayCard = (cardEl) => {
 
 cards.forEach(initOverlayCard);
 document.body.addEventListener("pointermove", applyOverlayMask);
+
+document.querySelectorAll('.details button').forEach(button => {
+    button.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
+        if (url) {
+            window.location.href = url;
+        }
+    });
+});
